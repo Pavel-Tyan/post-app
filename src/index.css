@@ -1,21 +1,21 @@
 :root {
-  --font: "Open Sans", sans-serif;
-  --primary-color: #2f80ed;
-  --secondary-color: #0894d1;
-  --text-primary-color: #000000;
-  --text-secondary-color: #5b5b5e;
-  --white-color: #ffffff;
+    --font: 'Open Sans', sans-serif;
+    --primary-color: #2f80ed;
+    --secondary-color: #0894d1;
+    --text-primary-color: #000000;
+    --text-secondary-color: #5b5b5e;
+    --white-color: #ffffff;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+    margin: 0;
+    font-family: var(--font);
 }
 
 button {
-  cursor: pointer;
-  font-family: var(--font);
+    cursor: pointer;
 }
