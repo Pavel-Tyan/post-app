@@ -5,6 +5,7 @@ import styles from '../Login/Login.module.css';
 import Heading from '../../components/Heading/Heading';
 import { FormEvent } from 'react';
 import { useRegister } from '../../hooks/useRegister';
+import { AxiosError } from 'axios';
 
 export type RegisterForm = {
     name: {
@@ -22,13 +23,13 @@ export type RegisterForm = {
 };
 
 const Register = () => {
-    const registerUser = useRegister();
+    const { mutate: registerUser, isError, isSuccess, reset, error } = useRegister();
     const navigate = useNavigate();
 
     const submit = async (e: FormEvent) => {
         e.preventDefault();
 
-        registerUser.reset();
+        reset();
 
         const target = e.target as typeof e.target & RegisterForm;
         const userDto = {
@@ -38,29 +39,39 @@ const Register = () => {
             password: target.password.value,
         };
 
-        registerUser.mutate(userDto);
-        navigate('/');
+        registerUser(userDto);
     };
+
+    if (isSuccess) {
+        navigate('/auth/login');
+    }
+
+    let errorMessage = error?.message;
+
+    if (error instanceof AxiosError) {
+        errorMessage = error.response?.data.message;
+    }
 
     return (
         <div className={styles.auth}>
             <Heading>Регистрация</Heading>
+            {isError && <div className={styles.error}>{errorMessage}</div>}
             <form className={styles.form} onSubmit={submit}>
                 <div className={styles.field}>
                     <label htmlFor='password'>Ваша фамилия</label>
-                    <Input id='surname' placeholder='Фамилия' name='surname' />
+                    <Input id='surname' placeholder='Фамилия' name='surname' required />
                 </div>
                 <div className={styles.field}>
                     <label htmlFor='name'>Ваше имя</label>
-                    <Input id='name' placeholder='Имя' name='name' />
+                    <Input id='name' placeholder='Имя' name='name' required />
                 </div>
                 <div className={styles.field}>
                     <label htmlFor='email'>Ваш email</label>
-                    <Input id='email' placeholder='Email' name='email' />
+                    <Input id='email' placeholder='Email' name='email' required />
                 </div>
                 <div className={styles.field}>
                     <label htmlFor='password'>Ваше пароль</label>
-                    <Input id='password' name='password' placeholder='Пароль' />
+                    <Input id='password' name='password' placeholder='Пароль' required />
                 </div>
                 <Button size='large'>Зарегистрироваться</Button>
             </form>
