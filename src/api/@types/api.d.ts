@@ -5,6 +5,17 @@ type UserDto = {
     password: string;
 };
 
+export type UpdatePasswordUser = {
+    user: UserDto;
+    newPassword: string;
+    id: string;
+};
+
+export type UpdateDataUser = {
+    user: UserDto;
+    id: string;
+};
+
 type PublicationDto = {
     category: string;
     title: string;
