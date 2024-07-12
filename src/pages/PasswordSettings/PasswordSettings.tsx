@@ -54,6 +54,8 @@ const PasswordSettings = () => {
                 id: user?._id,
             };
 
+            console.log(updatePasswordDto);
+
             updateUser(updatePasswordDto);
         };
 
@@ -71,11 +73,18 @@ const PasswordSettings = () => {
                     <main className={styles.formWrapper}>
                         <Heading>Сменить пароль</Heading>
                         {isUpdatingUserSuccess && <div className={styles.success}>Данные обновлены</div>}
-                        {updateUserErrorMessage && <div className={styles.error}>{updateUserErrorMessage}</div>}
+                        {updateUserErrorMessage && (
+                            <div className={styles.error}>{updateUserErrorMessage}</div>
+                        )}
                         <form className={styles.form} onSubmit={submit}>
                             <div className={styles.field}>
                                 <label htmlFor='oldPassword'>Старый пароль</label>
-                                <Input id='oldPassword' placeholder='Старый пароль' name='oldPassword' required />
+                                <Input
+                                    id='oldPassword'
+                                    placeholder='Старый пароль'
+                                    name='oldPassword'
+                                    required
+                                />
                             </div>
                             <div className={styles.field}>
                                 <label htmlFor='password'>Новый пароль</label>
