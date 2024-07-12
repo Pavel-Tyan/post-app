@@ -1,0 +1,42 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--primary-color);
+    height: 15%;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.linkList {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--text-primary-color);
+    transition: color 0.3s;
+
+    font-size: 18px;
+}
+
+.link:hover {
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
