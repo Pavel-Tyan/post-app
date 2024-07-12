@@ -11,7 +11,7 @@ class CommentService {
         return res.data;
     }
 
-    async postPublication({ params, config }: AxiosRequestConfig<CommentDto>) {
+    async postComment({ params, config }: AxiosRequestConfig<CommentDto>) {
         const res = await api.post(this.PREFIX + '/create', params, config);
         return res.data;
     }
