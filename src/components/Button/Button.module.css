@@ -12,6 +12,7 @@
 
 .button:hover {
     background: var(--secondary-color);
+    transition: background 0.25s;
 }
 
 .small {
