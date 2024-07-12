@@ -1,0 +1,26 @@
+.button {
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    padding: 14px 12px;
+
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+
+    cursor: pointer;
+    transition: background 0.25s;
+
+    border: none;
+    color: var(--white-color);
+    background: var(--text-secondary-color);
+}
+
+.button:hover {
+    background: var(--secondary-color);
+    transition: background 0.25s;
+}
