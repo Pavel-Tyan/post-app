@@ -9,9 +9,9 @@ import Register from './pages/Register/Register.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Login from './pages/Login/Login.tsx';
 import Layout from './layout/Menu/Layout.tsx';
-import Navbar from './components/Navbar/Navbar.tsx';
 import PasswordSettings from './pages/PasswordSettings/PasswordSettings.tsx';
 import PersonalDataSettings from './pages/PersonalDataSettings/PersonalDataSettings.tsx';
+import Publications from './pages/Publications/Publications.tsx';
 
 const router = createBrowserRouter([
     {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         element: (
             <RequireAuth>
                 <Layout>
-                    <Navbar userName='Павел' userSurname='Тян' />
+                    <Publications />
                 </Layout>
             </RequireAuth>
         ),
