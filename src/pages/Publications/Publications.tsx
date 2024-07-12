@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { usePublications } from '../../hooks/usePublications';
 import { Publication, PublicationDto } from '../../api/@types/api';
 import PublicationContent from '../../components/PublicationContent/PublicationContent';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import Button from '../../components/Button/Button';
 import Heading from '../../components/Heading/Heading';
 import { useCreatePublication } from '../../hooks/useCreatePublication';
@@ -25,11 +25,17 @@ const Publications = () => {
 
     const [isCreatingPublication, setIsCreatingPublication] = useState<boolean>(false);
 
+    const [postCategory, setPostCategory] = useState<string>('');
+
     const {
         data: publications,
         isSuccess: isGettingPublicationSuccess,
-        refetch: refetchPublications,
+        mutate: getPublicationsByCategory,
     } = usePublications();
+
+    useEffect(() => {
+        getPublicationsByCategory(postCategory);
+    }, [getPublicationsByCategory, postCategory]);
 
     const { mutateAsync: createPublication } = useCreatePublication();
 
@@ -59,7 +65,7 @@ const Publications = () => {
         };
 
         createPublication(publicationDto).then(() => {
-            refetchPublications();
+            getPublicationsByCategory(postCategory);
         });
     };
 
@@ -69,6 +75,7 @@ const Publications = () => {
                 <Navbar userSurname={user.surname} userName={user.name} />
                 <div className={styles.publicationsWrapper}>
                     <PublicationPanel
+                        setPostCategory={(category: string) => setPostCategory(category)}
                         publications={publications}
                         createPost={createPost}
                         displayPost={displayPost}
