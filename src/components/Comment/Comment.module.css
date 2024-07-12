@@ -1,0 +1,19 @@
+.wrapper {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.commentDataWrapper {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--text-primary-color);
+}
+
+.text {
+    width: 85%;
+    padding: 12px 12px;
+    border: 1px solid var(--primary-color);
+}
