@@ -27,6 +27,11 @@ class UserService {
         const res = await api.get(this.PREFIX + '/' + token);
         return res.data;
     }
+
+    async getUserById(id: string) {
+        const res = await api.get(this.PREFIX + '/byId/' + id);
+        return res.data;
+    }
 }
 
 export default new UserService();
