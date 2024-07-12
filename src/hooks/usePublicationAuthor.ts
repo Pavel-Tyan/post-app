@@ -1,12 +1,12 @@
 import { useMutation } from '@tanstack/react-query';
 import userService from '../api/services/user.service';
-import { Publication } from '../api/@types/api';
+import { Comment, Publication } from '../api/@types/api';
 import { AxiosError } from 'axios';
 
-export const usePublicationAuthor = () => {
+export const useAuthor = () => {
     return useMutation({
-        mutationFn: async (publication: Publication) => {
-            const authorId = publication.userId;
+        mutationFn: async (content: Publication | Comment) => {
+            const authorId = content.userId;
             return await userService.getUserById(authorId);
         },
         onSuccess: async (data, variables) => {
