@@ -6,6 +6,7 @@ import Heading from '../../components/Heading/Heading';
 import { FormEvent } from 'react';
 import { useRegister } from '../../hooks/useRegister';
 import { AxiosError } from 'axios';
+import { UserDto } from '../../api/@types/api';
 
 export type RegisterForm = {
     name: {
@@ -32,7 +33,7 @@ const Register = () => {
         reset();
 
         const target = e.target as typeof e.target & RegisterForm;
-        const userDto = {
+        const userDto: UserDto = {
             name: target.name.value,
             surname: target.surname.value,
             email: target.email.value,
@@ -43,7 +44,7 @@ const Register = () => {
     };
 
     if (isSuccess) {
-        navigate('/auth/login');
+        navigate('/login');
     }
 
     let errorMessage = error?.message;
@@ -78,7 +79,7 @@ const Register = () => {
             <div className={styles.links}>
                 <div>Есть аккаунт?</div>
                 <div>
-                    <Link to='/auth/login'>Войти</Link>
+                    <Link to='/login'>Войти</Link>
                 </div>
             </div>
         </div>
