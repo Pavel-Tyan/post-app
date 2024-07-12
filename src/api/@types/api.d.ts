@@ -23,6 +23,12 @@ type PublicationDto = {
     userId: string;
 };
 
+type CreatePublicationDto = {
+    category: string;
+    title: string;
+    text: string;
+};
+
 type Publication = {
     _id: string;
     createdAt: string;
