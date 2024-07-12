@@ -1,6 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import userService from '../api/services/user.service';
 import { AxiosError } from 'axios';
+import { UserDto } from '../api/@types/api';
 
 export const useRegister = () => {
     return useMutation({
