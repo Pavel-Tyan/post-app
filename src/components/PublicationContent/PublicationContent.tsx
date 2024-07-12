@@ -20,7 +20,7 @@ const PublicationContent = ({ publication }: PublicationContentProps) => {
     }, [getPublicationAuthor, publication]);
 
     if (!publication) {
-        return <div className={styles.loading}>Loading ...</div>;
+        return <></>;
     }
 
     const formattedDate = new Intl.DateTimeFormat('ru-RU').format(new Date(publication.createdAt));
