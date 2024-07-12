@@ -46,6 +46,11 @@ type CommentDto = {
     publicationId: string;
 };
 
+type CreateCommentDto = {
+    text: string;
+    publicationId: string;
+};
+
 type Comment = {
     _id: string;
     createdAt: string;
