@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import publicationService from '../api/services/publication.service';
 
-export const useAllPublications = () => {
+export const usePublications = () => {
     return useQuery({
         queryKey: ['publications'],
         queryFn: async () => {
