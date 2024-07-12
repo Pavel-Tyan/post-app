@@ -16,6 +16,10 @@ body {
     font-family: var(--font);
 }
 
+ul {
+    list-style: none;
+}
+
 button {
     cursor: pointer;
 }
