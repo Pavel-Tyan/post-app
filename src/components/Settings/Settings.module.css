@@ -1,0 +1,30 @@
+.navbar {
+    height: 100%;
+    border-right: 1px solid var(--primary-color);
+    width: 270px;
+}
+
+.linkList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--text-primary-color);
+    transition: color 0.3s;
+
+    font-size: 18px;
+}
+
+.link:hover {
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.active {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
