@@ -2,6 +2,11 @@ import { NavLink } from 'react-router-dom';
 import styles from './Settings.module.css';
 import cn from 'classnames';
 
+/**
+ * Renders the navigation panel of settings.
+ *
+ * @return {JSX.Element} The rendered settings component.
+ */
 const Settings = () => {
     return (
         <nav className={styles.navbar} aria-label='Навигация по настройкам пользователя'>

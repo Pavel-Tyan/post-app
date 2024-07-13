@@ -19,6 +19,11 @@ export type ChangePasswordForm = {
     };
 };
 
+/**
+ * Renders the Password Settings component and allows the user to update their password.
+ *
+ * @return {JSX.Element} The JSX element representing the Password Settings component.
+ */
 const PasswordSettings = () => {
     const { data: user, isSuccess: isGettingUserSuccess, error: isGettingUserError } = useUser();
 
@@ -72,7 +77,9 @@ const PasswordSettings = () => {
                     <Settings />
                     <main className={styles.formWrapper}>
                         <Heading>Сменить пароль</Heading>
-                        {isUpdatingUserSuccess && <div className={styles.success}>Данные обновлены</div>}
+                        {isUpdatingUserSuccess && (
+                            <div className={styles.success}>Данные обновлены</div>
+                        )}
                         {updateUserErrorMessage && (
                             <div className={styles.error}>{updateUserErrorMessage}</div>
                         )}
@@ -88,7 +95,12 @@ const PasswordSettings = () => {
                             </div>
                             <div className={styles.field}>
                                 <label htmlFor='password'>Новый пароль</label>
-                                <Input id='password' name='password' placeholder='Новый пароль' required />
+                                <Input
+                                    id='password'
+                                    name='password'
+                                    placeholder='Новый пароль'
+                                    required
+                                />
                             </div>
                             <Button size='large'>Сохранить</Button>
                         </form>

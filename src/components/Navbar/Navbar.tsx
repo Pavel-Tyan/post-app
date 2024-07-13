@@ -3,6 +3,13 @@ import { NavbarProps } from './Navbar.props';
 import Button from '../Button/Button';
 import styles from './Navbar.module.css';
 
+/**
+ * Renders the navgitaion bar of the application.
+ *
+ * @param {NavbarProps} userName - The user's first name.
+ * @param {NavbarProps} userSurname - The user's last name.
+ * @return {JSX.Element} The rendered Navbar component.
+ */
 const Navbar = ({ userName, userSurname }: NavbarProps) => {
     const navigate = useNavigate();
 

@@ -16,6 +16,11 @@ type PostForm = {
     category: { value: string };
     text: { value: string };
 };
+/**
+ * Renders a page for displaying and creating publications.
+ *
+ * @return {JSX.Element} The rendered page component.
+ */
 const Publications = () => {
     const { data: user, isSuccess: isGettingUserSuccess, error: isGettingUserError } = useUser();
 

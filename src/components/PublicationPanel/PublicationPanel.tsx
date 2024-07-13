@@ -6,6 +6,15 @@ import PublicationCartButton from '../PublicationCartButton/PublicationCartButto
 import styles from './PublicationPanel.module.css';
 import { PublicationPanelProps } from './PublicationPanel.props';
 
+/**
+ * Renders the Publication Panel component. Renders list of publications.
+ *
+ * @param {PublicationPanelProps} publications - The list of publications to display.
+ * @param {Function} createPost - The function to create a new post.
+ * @param {Function} displayPost - The function to display a specific post.
+ * @param {Function} setPostCategory - The function to set the post category.
+ * @return {JSX.Element} The JSX element representing the Publication Panel component.
+ */
 const PublicationPanel = ({
     publications,
     createPost,

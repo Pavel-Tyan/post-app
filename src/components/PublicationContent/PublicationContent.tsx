@@ -5,6 +5,12 @@ import { PublicationContentProps } from './PublicationContent.props';
 import Heading from '../Heading/Heading';
 import CommentsList from '../Comments/CommentsList';
 
+/**
+ * Renders the content of a particular publication.
+ *
+ * @param {PublicationContentProps} publication - The publication object containing the publication details and comments.
+ * @return {JSX.Element} The rendered publication content.
+ */
 const PublicationContent = ({ publication }: PublicationContentProps) => {
     const {
         mutate: getPublicationAuthor,

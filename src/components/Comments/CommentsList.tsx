@@ -14,6 +14,12 @@ type CommentForm = {
     };
 };
 
+/**
+ * Renders a list of comments for a specific publication and allows users to submit new comments.
+ *
+ * @param {CommentsListProps} publicationId - The ID of the publication to display comments for.
+ * @return {JSX.Element} The JSX element representing the comments list component.
+ */
 const CommentsList = ({ publicationId }: CommentsListProps) => {
     const { data: comments, mutate: getCommentsByPublicationId, isSuccess } = useComments();
 

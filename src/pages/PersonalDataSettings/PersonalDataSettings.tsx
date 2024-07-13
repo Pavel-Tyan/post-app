@@ -22,6 +22,11 @@ export type ChangePersonalDataForm = {
     };
 };
 
+/**
+ * Renders the page for changing personal data.
+ *
+ * @return {JSX.Element} The JSX element representing the PersonalDataSettings component.
+ */
 const PersonalDataSettings = () => {
     const { data: user, isSuccess: isGettingUserSuccess, error: isGettingUserError } = useUser();
 
@@ -72,12 +77,21 @@ const PersonalDataSettings = () => {
                     <Settings />
                     <main className={styles.formWrapper}>
                         <Heading>Сменить личные данные</Heading>
-                        {isUpdatingUserSuccess && <div className={styles.success}>Данные обновлены</div>}
-                        {updateUserErrorMessage && <div className={styles.error}>{updateUserErrorMessage}</div>}
+                        {isUpdatingUserSuccess && (
+                            <div className={styles.success}>Данные обновлены</div>
+                        )}
+                        {updateUserErrorMessage && (
+                            <div className={styles.error}>{updateUserErrorMessage}</div>
+                        )}
                         <form className={styles.form} onSubmit={submit}>
                             <div className={styles.field}>
                                 <label htmlFor='password'>Текущий пароль</label>
-                                <Input id='password' name='password' placeholder='Текущий пароль' required />
+                                <Input
+                                    id='password'
+                                    name='password'
+                                    placeholder='Текущий пароль'
+                                    required
+                                />
                             </div>
                             <div className={styles.field}>
                                 <label htmlFor='surname'>Фамилия</label>

@@ -23,6 +23,11 @@ export type RegisterForm = {
     };
 };
 
+/**
+ * Renders a registration form and handles the registration process.
+ *
+ * @return {JSX.Element} The registration form component.
+ */
 const Register = () => {
     const { mutate: registerUser, isError, isSuccess, reset, error } = useRegister();
     const navigate = useNavigate();

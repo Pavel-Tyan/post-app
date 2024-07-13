@@ -17,6 +17,12 @@ export type LoginForm = {
     };
 };
 
+/**
+ * Login page that handles the submission of the login form.
+ *
+ * @param {FormEvent} e - The form event triggering the submission.
+ * @return {void}
+ */
 const Login = () => {
     const { mutate: loginUser, isError, isSuccess, reset, error } = useLogin();
     const navigate = useNavigate();
